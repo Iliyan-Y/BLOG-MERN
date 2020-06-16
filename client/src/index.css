@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#header:hover {
+  cursor: pointer;
+}
+
+/* #components-layout-demo-side .logo {
+  height: 32px;
+  background: rgba(219, 26, 245, 0.2);
+  margin: 16px;
+} */
+
+#AuthroP {
+  font-size: small;
+  display: flex;
+  justify-self: flex-start;
+  margin-bottom: -1.5em;
+}
+
+#postedAt {
+  display: flex;
+  flex-direction: row-reverse;
+  transform: translateY(-3.2em);
+  font-size: small;
+}
+
+.displayEditor img {
+  max-width: 85%;
+  max-height: 675px;
+}
+.displayEditor iframe {
+  max-width: 85%;
+  min-width: 50%;
+  min-height: 300px;
+}
+
+.newPostEditor img {
+  max-width: 85%;
+  max-height: 675px;
+  display: block;
+  margin: 1em auto;
+}
+.newPostEditor iframe {
+  max-width: 85%;
+  min-width: 50%;
+  min-height: 320px;
+}
+
+#NoteEdit {
+  background: white;
+  position: fixed;
+  padding: 3em;
+  width: 50%;
+  top: 25%;
+  left: 25%;
+  border-radius: 12px;
+  transform: translate(-1%, -83%);
+}
+
+@media screen and (max-width: 1025px) {
+  .ToDoTask {
+    flex-direction: column !important;
+  }
+  .toDoBtns {
+    width: 40% !important;
+    margin: 0.3em auto !important;
+  }
+  .toDoItems {
+    width: 100% !important;
+    justify-self: center;
+    padding: 0.3em;
+    margin: 0.4em auto;
+  }
+  #TaskDate {
+    display: none;
+  }
+
+  .DisplayNote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #NoteEdit {
+    width: 60%;
+    top: 40%;
+    left: 27%;
+  }
+  #userProfile {
+    width: 70% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .newPostEditor iframe {
+    min-height: 140px;
+  }
+  .displayEditor iframe {
+    min-height: 140px;
+  }
+  #AuthroP {
+    margin: 1em auto;
+  }
+  #postedAt {
+    margin: 2.4em auto -3em;
+
+    display: block-inline;
+  }
+  .ToDoTask {
+    flex-direction: column !important;
+  }
+  .toDoBtns {
+    width: 100% !important;
+    margin: 0.3em 0;
+  }
+  .toDoItems {
+    width: 100% !important;
+    justify-self: center;
+    padding: 0.3em;
+    margin: 0.4em auto;
+  }
+  #TaskDate {
+    display: none;
+  }
+  .DisplayNote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #NoteEdit {
+    /* width: 60%;
+    height: 50%; */
+    top: 60%;
+    left: -17px;
+    padding: 1em;
+    min-height: 180px;
+    min-width: 200px;
+  }
+  #editTxAre {
+    height: 180%;
+    min-height: 150px;
+  }
+  #userProfile {
+    width: 100% !important;
+  }
+  .PostButtons {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    height: auto !important;
+  }
+  #TagInput {
+    width: 100% !important;
+  }
+  #TextEditorToolBar {
+    transform: scale(0.8);
+  }
+}

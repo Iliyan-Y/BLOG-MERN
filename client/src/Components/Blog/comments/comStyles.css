@@ -1,0 +1,151 @@
+.commentDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+#writeCommentDiv {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto 1em;
+}
+
+#commentAuthorInfo {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0.8em auto -2em;
+  border-bottom: solid 1px grey;
+  padding: 0 0.5em;
+  background: orange;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  height: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+#displayComments {
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid lightgrey;
+  width: 75%;
+  padding: 2.8em 1em 1em;
+  z-index: -1;
+  border-radius: 12px;
+  resize: none;
+}
+
+.ComBtnStyle {
+  border-radius: 12px;
+  width: 24px;
+  height: 24px;
+  font-size: x-small;
+  margin: 0.2em 0.2em 0;
+}
+
+#editComment {
+  background: #8afc88;
+  margin-left: 1em;
+  outline: none;
+}
+#editComment:hover {
+  background: chartreuse;
+  color: blue;
+}
+#delComment {
+  background: #fc4e4e;
+  color: black;
+  outline: none;
+}
+
+#delComment:hover {
+  background: red;
+  color: white;
+}
+
+#EditCommForm {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 50%;
+  right: 25%;
+}
+
+@media screen and (max-width: 600px) {
+  #writeCommentDiv {
+    width: 82%;
+  }
+  #commentAuthorInfo {
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 100px;
+  }
+  #commentAuthorInfo img {
+    margin: 0 auto;
+  }
+  #crudDiv {
+    flex-direction: column;
+  }
+  #crudDiv p {
+    margin: 0 auto;
+    margin-top: -1.3em;
+    font-size: small;
+  }
+}
+
+@keyframes editIn {
+  0% {
+    right: -10%;
+    transform: scale(0.4);
+  }
+  25% {
+    right: 50%;
+    transform: scale(1.2);
+  }
+  50% {
+    right: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    right: 25%;
+    transform: scale(1);
+  }
+}
+
+@keyframes editOut {
+  0% {
+    right: 25%;
+    transform: scale(1);
+  }
+  25% {
+    right: 0%;
+  }
+  50% {
+    right: 50%;
+    opacity: 1;
+  }
+  100% {
+    right: 0;
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+@keyframes commentIn {
+  from {
+    transform: translateY(-180px) scale(1.1);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes commentOut {
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(-100px) scale(0.9);
+  }
+}
