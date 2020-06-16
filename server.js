@@ -6,6 +6,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 // Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
 require("dotenv").config();
+const path = require("path");
 
 //create Express Server
 const app = express();
@@ -44,6 +45,17 @@ app.use("/apps/blog", blogPostRoute);
 app.use("/user/blog", UserBlogRoute);
 app.use("/toDoList", toDoRoute);
 app.use("/blog/comments", commentsRoute);
+
+//Run this if in production
+if (process.env.NODE_ENV === "production") {
+  //set static folder
+  app.use(express.static("client/build"));
+
+  //redirect to the build folder
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
 
 // start listen on the port
 app.listen(port, () => {
