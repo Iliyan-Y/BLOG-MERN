@@ -10,7 +10,6 @@ const path = require("path");
 
 //create Express Server
 const app = express();
-const port = process.env.PORT || 5000;
 
 //MiddleWare
 app.use(cors());
@@ -31,7 +30,6 @@ connection.once("open", () => {
 });
 
 //load the routes
-const testRoute = require("./routes/testRoute");
 const userRoute = require("./routes/userRoute");
 const blogPostRoute = require("./routes/blogPostRoute");
 const UserBlogRoute = require("./routes/UserBlogRoute");
@@ -39,7 +37,6 @@ const toDoRoute = require("./routes/toDoRoute");
 const commentsRoute = require("./routes/commentsRoute");
 
 //use routes
-app.use("/test", testRoute);
 app.use("/user", userRoute);
 app.use("/apps/blog", blogPostRoute);
 app.use("/user/blog", UserBlogRoute);
@@ -49,15 +46,16 @@ app.use("/blog/comments", commentsRoute);
 //Run this if in production
 if (process.env.NODE_ENV === "production") {
   //set static folder
-  app.use(express.static("client/build"));
+  app.use(express.static(path.join(__dirname, "client/build")));
 
   //redirect to the build folder
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
 }
 
 // start listen on the port
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
