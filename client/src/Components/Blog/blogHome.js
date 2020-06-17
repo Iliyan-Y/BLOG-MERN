@@ -37,15 +37,13 @@ const BlogHome = () => {
       const body = {
         tags: addTags(),
       };
-      axios
-        .post("http://localhost:5000/apps/blog/displayTags", body)
-        .then((res) => {
-          if (res.data.length > 0) {
-            setAllPosts(res.data);
-          }
-        });
+      axios.post("/apps/blog/displayTags", body).then((res) => {
+        if (res.data.length > 0) {
+          setAllPosts(res.data);
+        }
+      });
     } else {
-      axios.get("http://localhost:5000/apps/blog").then((res) => {
+      axios.get("/apps/blog").then((res) => {
         if (res.data.length > 0) {
           setAllPosts(res.data);
         }
