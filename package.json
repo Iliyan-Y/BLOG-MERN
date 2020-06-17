@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm build --prefix client"
+    "client-install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run client-install && npm run build",
+    "start": "node server.js",
+    "client": "cd client && npm start"
   },
   "keywords": [],
   "author": "",
