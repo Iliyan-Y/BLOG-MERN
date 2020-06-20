@@ -152,7 +152,7 @@ router.post("/emailvref", async (req, res) => {
         subject: "Reg. Verification", // Subject line
         //text: "Hello world?", // plain text body
         html: `<h3>Thank you for your registration!</h3> </br> 
-        <p> Click here to confirm your email: <a href="http://localhost:5000/user/verify/${uid}"> Verify</a></p>
+        <p> Click here to confirm your email: <a href="https://blog-anything.herokuapp.com/user/verify/${uid}"> Verify</a></p>
         </br> 
         <p><b>Pleace do NOT respond to this email</b></p>
         `,
@@ -180,11 +180,11 @@ router.get("/verify/:id", async (req, res) => {
   try {
     let user = await User.findById(newUserId);
     if (user.verify) {
-      res.redirect("http://localhost:3000/");
+      res.redirect("https://blog-anything.herokuapp.com/");
     } else {
       user.verify = true;
       await user.save();
-      res.status(201).redirect("http://localhost:3000/verify/");
+      res.status(201).redirect("https://blog-anything.herokuapp.com/verify/");
     }
   } catch (err) {
     res.status(400).send("No user match");
