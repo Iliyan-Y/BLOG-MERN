@@ -3,11 +3,11 @@ import React, { useState, createContext, useEffect } from "react";
 //trackUser
 const useTackUser = () => {
   const [userToken, setUserToken] = useState(
-    localStorage.getItem("token") || ""
+    sessionStorage.getItem("token") || ""
   );
 
   useEffect(() => {
-    localStorage.setItem("token", userToken);
+    sessionStorage.setItem("token", userToken);
   }, [userToken]);
 
   return [userToken, setUserToken];
