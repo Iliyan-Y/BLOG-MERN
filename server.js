@@ -49,10 +49,10 @@ if (process.env.NODE_ENV === "production") {
   //set static folder
   app.use(express.static("client/build"));
 
-  // //redirect to the build folder
-  // app.get("*", (req, res) => {
-  //   res.sendFile(path.join(__dirname, "client/build/index.html"));
-  // });
+  //return all requests to the React app
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
+  });
 }
 
 // start listen on the port
