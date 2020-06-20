@@ -32,7 +32,7 @@ const EditMenu = ({ setEdit, each, edit, sellectedList }) => {
     };
 
     axios
-      .post("http://localhost:5000/toDoList/updateNote", body, config)
+      .post("/toDoList/updateNote", body, config)
       .then((res) => {
         setReRender(!reRender);
         setEdit(false);

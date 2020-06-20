@@ -20,7 +20,7 @@ const CheckBox = (props) => {
     };
 
     axios
-      .post("http://localhost:5000/toDoList/updateNote", body, config)
+      .post("/toDoList/updateNote", body, config)
       .then((res) => {
         console.log(res.data);
         setReRender(!reRender);

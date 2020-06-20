@@ -37,7 +37,7 @@ export const DataProvider = (props) => {
       }, 10799964); // 3 hours
 
       // get user data based on the token
-      fetch("http://localhost:5000/user/me", {
+      fetch("/user/me", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

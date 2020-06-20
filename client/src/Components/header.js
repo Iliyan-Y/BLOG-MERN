@@ -32,7 +32,7 @@ const Head = () => {
     };
 
     axios
-      .post("http://localhost:5000/user/logout", bodyParameters, config)
+      .post("/user/logout", bodyParameters, config)
       .then((resp) => {
         setUserToken("");
         goTo.push("/apps/blog");

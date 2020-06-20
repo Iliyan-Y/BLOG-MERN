@@ -31,7 +31,7 @@ const UserProfile = () => {
       name: newName,
     };
     axios
-      .post("http://localhost:5000/user/nameChange", body)
+      .post("/user/nameChange", body)
       .then(async (res) => {
         //console.log(res);
         setNewName("");
@@ -46,7 +46,7 @@ const UserProfile = () => {
       id: userData._id,
     };
     axios
-      .post("http://localhost:5000/user/pic", body)
+      .post("/user/pic", body)
       .then((res) => {
         window.location.reload(false);
       })
@@ -73,7 +73,7 @@ const UserProfile = () => {
       oldPass.length > 5
     ) {
       axios
-        .post("http://localhost:5000/user/passChange", body2, config)
+        .post("/user/passChange", body2, config)
         .then((res) => {
           //console.log(res);
           setOldPass("");

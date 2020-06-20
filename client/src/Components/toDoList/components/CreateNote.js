@@ -19,7 +19,7 @@ const CreateNote = (props) => {
     };
 
     axios
-      .post("http://localhost:5000/toDoList/newNote", body, config)
+      .post("/toDoList/newNote", body, config)
       .then((res) => {
         setNewNote("");
         setReRender(!reRender);

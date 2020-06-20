@@ -21,7 +21,7 @@ const MenuBar = (props) => {
       };
 
       axios
-        .post("http://localhost:5000/toDoList/newList", body, config)
+        .post("/toDoList/newList", body, config)
         .then((res) => {
           console.log(res.data);
           setNewList("");
@@ -40,7 +40,7 @@ const MenuBar = (props) => {
     };
 
     axios
-      .post("http://localhost:5000/toDoList/removeList", body, config)
+      .post("/toDoList/removeList", body, config)
       .then((res) => {
         console.log(res.data);
       })
@@ -59,7 +59,7 @@ const MenuBar = (props) => {
 
     const unsub = () => {
       axios
-        .post("http://localhost:5000/toDoList/userLists", body, config)
+        .post("/toDoList/userLists", body, config)
         .then((res) => {
           setLists(res.data);
 

@@ -24,7 +24,7 @@ const NewComment = ({ openPanel, load, setLoad }) => {
       };
 
       axios
-        .post("http://localhost:5000/blog/comments/new", body, config)
+        .post("/blog/comments/new", body, config)
         .then((res) => {
           setNewComment("");
           setLoad(!load);

@@ -25,7 +25,7 @@ const CrudButtons = ({
     };
 
     await axios
-      .post("http://localhost:5000/blog/comments/delUserComment", body, config)
+      .post("/blog/comments/delUserComment", body, config)
       .then(() => {
         setAnimate(false);
         setLoad(!load);

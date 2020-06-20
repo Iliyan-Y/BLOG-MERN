@@ -24,7 +24,7 @@ const EditCommForm = ({
     };
 
     axios
-      .post("http://localhost:5000/blog/comments/update", body, config)
+      .post("/blog/comments/update", body, config)
       .then((res) => {
         setShow(false);
         setLoad(!load);

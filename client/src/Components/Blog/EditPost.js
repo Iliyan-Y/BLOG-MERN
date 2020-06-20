@@ -46,11 +46,7 @@ const EditPost = (props) => {
     };
 
     axios
-      .post(
-        `http://localhost:5000/apps/blog/update/${props.each._id}`,
-        newPost,
-        config
-      )
+      .post(`/apps/blog/update/${props.each._id}`, newPost, config)
       .then(() => {
         setPostTitle("");
         setPostDescr("");

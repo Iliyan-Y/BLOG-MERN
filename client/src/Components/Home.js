@@ -57,7 +57,7 @@ const Home = () => {
           <Footer
             style={{ textAlign: "center", background: "black", color: "white" }}
           >
-            Footer
+            Blog Anything Project 2020
           </Footer>
         </Layout>
       </Layout>

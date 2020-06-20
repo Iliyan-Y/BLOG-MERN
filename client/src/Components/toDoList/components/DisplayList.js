@@ -20,7 +20,7 @@ const DisplayList = (props) => {
 
     const unsub = () => {
       axios
-        .post("http://localhost:5000/toDoList/sellectList", body, config)
+        .post("/toDoList/sellectList", body, config)
         .then((res) => {
           setNotes(res.data.notes);
         })

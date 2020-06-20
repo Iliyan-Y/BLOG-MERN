@@ -20,7 +20,7 @@ const DisplayComments = ({ openPanel }) => {
         postId: openPanel,
       };
       axios
-        .post("http://localhost:5000/blog/comments/showcomments", body)
+        .post("/blog/comments/showcomments", body)
         .then((res) => {
           setComments(res.data);
         })

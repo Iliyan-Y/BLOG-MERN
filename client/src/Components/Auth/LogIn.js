@@ -25,7 +25,7 @@ const SignIn = () => {
     };
 
     axios
-      .post("http://localhost:5000/user/login", newUser)
+      .post("/user/login", newUser)
       .then(async (res) => {
         // console.log(`Welcome: ${res.data.user.name}`);
         await setUserToken(res.data.token);

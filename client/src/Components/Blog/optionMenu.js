@@ -20,7 +20,7 @@ const OptionMenu = (props) => {
     };
 
     axios
-      .delete("http://localhost:5000/user/blog/" + props.each._id, config)
+      .delete("/user/blog/" + props.each._id, config)
       .then(() => {
         setReRender(!reRender);
         setCurrentOpenPage("/user/blog/");

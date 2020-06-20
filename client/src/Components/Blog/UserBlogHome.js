@@ -36,14 +36,12 @@ const useGetPosts = (sort) => {
 
   useEffect(() => {
     function unsub() {
-      axios
-        .post("http://localhost:5000/user/blog", body, config)
-        .then(async (res) => {
-          if (res.data.length > 0) {
-            setAllPosts(await res.data);
-            setBlogData(await res.data);
-          }
-        });
+      axios.post("/user/blog", body, config).then(async (res) => {
+        if (res.data.length > 0) {
+          setAllPosts(await res.data);
+          setBlogData(await res.data);
+        }
+      });
     }
     unsub();
   }, [reRender]);

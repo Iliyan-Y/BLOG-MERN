@@ -21,7 +21,7 @@ const SignIn = () => {
   // send verification email
   function emailConfirm(email, id) {
     axios
-      .post("http://localhost:5000/user/emailvref", { email, id })
+      .post("/user/emailvref", { email, id })
       .then(() => {
         // console.log("Verification email sent -> responce: ");
         goTo.push("/");
@@ -38,7 +38,7 @@ const SignIn = () => {
       verify: false,
     };
     axios
-      .post("http://localhost:5000/user/signin", newUser)
+      .post("/user/signin", newUser)
       .then(async (res) => {
         await setUserToken(res.data.token);
         emailConfirm(res.data.user.email, res.data.user._id);

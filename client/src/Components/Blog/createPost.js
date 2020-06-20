@@ -35,7 +35,7 @@ const CreatePost = () => {
       tags: addTags(),
     };
     axios
-      .post("http://localhost:5000/apps/blog/newPost", newPost, config)
+      .post("/apps/blog/newPost", newPost, config)
       .then(() => {
         setPostTitle("");
         setPostDescr("");
