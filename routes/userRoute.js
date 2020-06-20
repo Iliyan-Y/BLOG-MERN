@@ -184,7 +184,7 @@ router.get("/verify/:id", async (req, res) => {
     } else {
       user.verify = true;
       await user.save();
-      res.status(201).redirect("https://blog-anything.herokuapp.com/verify/");
+      res.status(201).redirect("https://blog-anything.herokuapp.com/verify");
     }
   } catch (err) {
     res.status(400).send("No user match");

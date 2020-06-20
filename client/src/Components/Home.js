@@ -37,7 +37,7 @@ const Home = () => {
 
             <Route path="/user/login" component={LogIn} />
             <Route path="/user/signin" component={SignIn} />
-            <Route path={`/verify`} component={VrefPage} />
+            <Route path="/verify" component={VrefPage} />
 
             {/* ------------AppS-------------- */}
             {userData ? (
