@@ -94,27 +94,6 @@ const PlugTextEditor = (props) => {
   };
   //--------------------------------------------------
 
-  // // Link function
-  // const addLinkFn = (editorState, link) => {
-  //   const contentState = editorState.getCurrentContent();
-  //   const contentStateWithEntity = contentState.createEntity(
-  //     "LINK",
-  //     "IMMUTABLE",
-  //     { url: link }
-  //   );
-  //   const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
-  //   const newEditorState = EditorState.set(editorState, {
-  //     currentContent: contentStateWithEntity,
-  //   });
-  //   return AtomicBlockUtils.insertAtomicBlock(newEditorState, entityKey, link);
-  // };
-
-  // const onAddLink = () => {
-  //   let link = window.prompt("Add link http:// ");
-  //   const newEditorState = addLinkFn(editorState, link);
-  //   setEditorState(newEditorState);
-  // };
-
   return (
     <React.Fragment>
       <Wraper>
@@ -125,7 +104,7 @@ const PlugTextEditor = (props) => {
           videoPlugin={videoPlugin}
           setPostText={props.setPostText}
           handleDisplay={handleDisplay}
-          // onAddLink={onAddLink}
+          //onAddLink={onAddLink}
         />
         <DivInner className="newPostEditor" onClick={focusEditor}>
           <Editor

@@ -28,4 +28,7 @@ export const styleMap = {
     textAlign: "left",
     paddingLeft: "0.8em",
   },
+  LINK: {
+    background: "orange",
+  },
 };

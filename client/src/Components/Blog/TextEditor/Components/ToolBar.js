@@ -7,6 +7,7 @@ import { HighlightOutlined } from "@ant-design/icons";
 import AddVideo from "./addVideoBtn";
 import ImageAdd from "./addImgBtn";
 import UploadTool from "./UploadTool";
+import { onAddLink } from "./Link";
 
 export const ToolBtn = styled.button`
   padding: 0.5em;
@@ -146,7 +147,7 @@ const ToolBar = (props) => {
           }}
           onClick={handleBlockCode}
         >
-          >Code
+          Code
         </ToolBtn>
         <ImageAdd
           editorState={props.editorState}
@@ -161,7 +162,11 @@ const ToolBar = (props) => {
 
         <UploadTool handleDisplay={props.handleDisplay} />
 
-        {/* <ToolBtn onClick={() => props.onAddLink()}>link</ToolBtn> */}
+        <ToolBtn
+          onClick={() => onAddLink(props.editorState, props.setEditorState)}
+        >
+          link
+        </ToolBtn>
       </div>
     </div>
   );
