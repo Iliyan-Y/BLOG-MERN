@@ -21,12 +21,6 @@ a {
   cursor: pointer;
 }
 
-/* #components-layout-demo-side .logo {
-  height: 32px;
-  background: rgba(219, 26, 245, 0.2);
-  margin: 16px;
-} */
-
 #AuthroP {
   font-size: small;
   display: flex;
@@ -170,5 +164,11 @@ a {
   }
   #TextEditorToolBar {
     transform: scale(0.8);
+  }
+  .quickNavBtns {
+    display: none;
+  }
+  #header h1 {
+    transform: translateX(0) !important;
   }
 }

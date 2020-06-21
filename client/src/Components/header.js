@@ -130,7 +130,11 @@ const Head = () => {
         {/* ------------ LOGO / MENU --------- */}
         {userToken ? (
           <div style={{ order: 2 }}>
-            <Dropdown overlay={appMenu} placement="bottomRight">
+            <Dropdown
+              //trigger={["click"]}
+              overlay={appMenu}
+              placement="bottomRight"
+            >
               <MenuOutlined
                 style={{
                   opacity: !animate ? 0 : 1,

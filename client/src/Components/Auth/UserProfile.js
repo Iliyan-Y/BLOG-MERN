@@ -141,10 +141,7 @@ const UserProfile = () => {
               }}
             ></span>
             <h3>{userData.email}</h3>
-            <div>
-              <BtnStyle onClick={picChange}>Save</BtnStyle>
-              <BtnStyle onClick={handleCansel}>Cancel</BtnStyle>
-            </div>
+            <p style={{ margin: "0.3em auto" }}>Profile Photo</p>
             <img
               src={base64Img !== "" ? base64Img : userData.img}
               alt="preview"
@@ -155,7 +152,10 @@ const UserProfile = () => {
                 height: "84px",
               }}
             />
-            <p style={{ margin: "0.3em auto" }}>New Profile Pic</p>
+            <div>
+              <BtnStyle onClick={picChange}>Save</BtnStyle>
+              <BtnStyle onClick={handleCansel}>Cancel</BtnStyle>
+            </div>
             <p style={{ fontSize: "small" }}>
               For best results use 84px square image less then 1mb
             </p>

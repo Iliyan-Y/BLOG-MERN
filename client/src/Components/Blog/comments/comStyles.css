@@ -92,6 +92,16 @@
     margin-top: -1.3em;
     font-size: small;
   }
+  #EditCommForm textarea {
+    min-width: 120px;
+    transform: translate(-20px, -10px) scale(1.2);
+  }
+  #EditCommForm div {
+    display: flex;
+    justify-content: space-between;
+    min-width: 100px;
+    transform: translateX(-9px);
+  }
 }
 
 @keyframes editIn {

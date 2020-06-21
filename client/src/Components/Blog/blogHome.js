@@ -69,9 +69,9 @@ const BlogHome = () => {
           />{" "}
           <Button onClick={() => setReRender(!reRender)}>Search</Button>
         </div>
-        <h1>Blog</h1>
+        <h1></h1>
         {userData ? (
-          <div style={{ marginBottom: "1.2em" }}>
+          <div className="quickNavBtns" style={{ marginBottom: "1.2em" }}>
             <Button onClick={() => goTo.push("/createPost")}>New Post</Button>{" "}
             <Button onClick={() => goTo.push("/user/blog")}>My Posts</Button>{" "}
             <Button onClick={() => goTo.push("/toDoList")}>My Notes</Button>

@@ -45,7 +45,6 @@ const NewComment = ({ openPanel, load, setLoad }) => {
       ></textarea>
       <div>
         <Button onClick={handlePost}>Send</Button>
-        <Button>Cancel</Button>
       </div>
     </>
   );
