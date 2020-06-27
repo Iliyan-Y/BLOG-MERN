@@ -1,8 +1,8 @@
 import React from "react";
-import { CompositeDecorator, EditorState, AtomicBlockUtils } from "draft-js";
+import { CompositeDecorator, EditorState, Modifier } from "draft-js";
 
 const Link = ({ entityKey, contentState, children }) => {
-  const { url } = contentState.getEntity(entityKey).getData();
+  let { url } = contentState.getEntity(entityKey).getData();
   return (
     <a href={url} target="_blank">
       {children}
@@ -29,56 +29,29 @@ export const createLinkDecorator = () =>
     },
   ]);
 
-// create the new editor state
-const addLinkFn = (editorState, link) => {
-  const decorator = createLinkDecorator();
-  const contentState = editorState.getCurrentContent();
-
-  const rawContentState = {
-    "blocks": [
-      {
-        "key": "3echq",
-        "text": "link",
-        "type": "unstyled",
-        "depth": 0,
-        "inlineStyleRanges": [],
-        "entityRanges": [{ "offset": 0, "length": 4, "key": 0 }],
-        "data": {},
-      },
-    ],
-    "entityMap": {
-      "0": {
-        "type": "LINK",
-        "mutability": "MUTABLE",
-        "data": { "url": "http://google.com" },
-      },
-    },
-  };
-
-  const contentStateWithEntity = contentState.createEntity("LINK", "MUTABLE", {
-    url: link,
-  });
-  const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
-  const newEditorState = EditorState.set(editorState, {
-    currentContent: contentStateWithEntity,
-    decorator,
-  });
-  let displayText = () => {
-    let name = window.prompt("Display Text");
-    return name ? name : link;
-  };
-  return AtomicBlockUtils.insertAtomicBlock(
-    newEditorState,
-    entityKey,
-    displayText()
-  );
-};
-
 // call all together
 export const onAddLink = (editorState, setEditorState) => {
-  let link = window.prompt("Add link http:// ");
-  if (link) {
-    const newEditorState = addLinkFn(editorState, link);
-    setEditorState(newEditorState);
+  let linkUrl = window.prompt("Add link http:// ");
+
+  const decorator = createLinkDecorator();
+  if (linkUrl) {
+    let displayLink = window.prompt("Display Text");
+    if (displayLink) {
+      const currentContent = editorState.getCurrentContent();
+      const createEntity = currentContent.createEntity("LINK", "MUTABLE", {
+        url: linkUrl,
+      });
+      let entityKey = currentContent.getLastCreatedEntityKey();
+      const selection = editorState.getSelection();
+      const textWithEntity = Modifier.insertText(
+        currentContent,
+        selection,
+        displayLink,
+        null,
+        entityKey
+      );
+      let newState = EditorState.createWithContent(textWithEntity, decorator);
+      setEditorState(newState);
+    }
   }
 };

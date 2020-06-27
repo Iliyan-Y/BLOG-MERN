@@ -37,7 +37,7 @@ const EditMenu = ({ setEdit, each, edit, sellectedList }) => {
         setReRender(!reRender);
         setEdit(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }
 
   return transitions.map(

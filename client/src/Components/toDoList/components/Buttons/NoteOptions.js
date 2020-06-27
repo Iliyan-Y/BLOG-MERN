@@ -34,7 +34,7 @@ const NoteOptions = (props) => {
           setTimeout(() => setReRender(!reRender), 450);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }
 
   //delate note
@@ -54,7 +54,7 @@ const NoteOptions = (props) => {
       .then((res) => {
         setTimeout(() => setReRender(!reRender), 660);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   };
 
   return (

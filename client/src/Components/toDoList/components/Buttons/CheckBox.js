@@ -22,10 +22,9 @@ const CheckBox = (props) => {
     axios
       .post("/toDoList/updateNote", body, config)
       .then((res) => {
-        console.log(res.data);
         setReRender(!reRender);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.error(err));
   }
 
   return <Checkbox onChange={handleCheck} checked={props.each.isDone} />;
