@@ -29,6 +29,6 @@ export const styleMap = {
     paddingLeft: "0.8em",
   },
   LINK: {
-    background: "orange",
+    background: "black",
   },
 };

@@ -3,8 +3,13 @@ import { CompositeDecorator, EditorState, Modifier } from "draft-js";
 
 const Link = ({ entityKey, contentState, children }) => {
   let { url } = contentState.getEntity(entityKey).getData();
+
   return (
-    <a href={url} target="_blank">
+    <a
+      style={{ color: "blue", fontStyle: "italic" }}
+      href={url}
+      target="_blank"
+    >
       {children}
     </a>
   );
