@@ -109,6 +109,7 @@ const ForEditText = (props) => {
         />
         <DivInner className="newPostEditor" onClick={focusEditor}>
           <Editor
+            spellCheck={true}
             ref={editor}
             customStyleMap={styleMap}
             editorState={editorState}

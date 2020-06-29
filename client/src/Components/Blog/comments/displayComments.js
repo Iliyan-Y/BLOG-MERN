@@ -88,8 +88,9 @@ const DisplayComments = ({ openPanel }) => {
             </div>
           </div>
           <textarea
+            disabled
             id="displayComments"
-            placeholder={each.body}
+            value={each.body}
             cols="50"
             rows="5"
           ></textarea>

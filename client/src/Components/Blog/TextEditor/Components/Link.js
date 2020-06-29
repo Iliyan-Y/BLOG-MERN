@@ -37,7 +37,6 @@ export const createLinkDecorator = () =>
 // call all together
 export const onAddLink = (editorState, setEditorState) => {
   let linkUrl = window.prompt("Add link http:// ");
-
   const decorator = createLinkDecorator();
   if (linkUrl) {
     let displayLink = window.prompt("Display Text");

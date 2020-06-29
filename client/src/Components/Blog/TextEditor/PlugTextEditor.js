@@ -109,6 +109,7 @@ const PlugTextEditor = (props) => {
         <DivInner className="newPostEditor" onClick={focusEditor}>
           <Editor
             ref={editor}
+            spellCheck={true}
             customStyleMap={styleMap}
             editorState={editorState}
             onChange={setEditorState}
